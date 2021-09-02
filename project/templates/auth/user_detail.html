@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Добро пожаловать, {{ user.username }} </h1>
+<h2>Мои посты</h2>
+{% for p in post %}
+{{ p.content }}
+{% endfor %}
+<h2>Мои комментарии</h2>
+{% for с in comment %}
+{{ с.commentText }}
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'CallBoard/default.html' %}
+{% block content %}
+    <h2>Publishers</h2>
+    <ul>
+        {% for publisher in object_list %}
+            ---
+            <li>{{ publisher.postCategory }}</li>
+            <li>{{ publisher.postUser }}</li>
+            <li>{{ publisher.postTitle }}</li>
+            <li>{{ publisher.postContent }}</li>
+        {% endfor %}
+<!--        {% for publisher1 in object_list %}-->
+<!--            <li>{{ publisher.name }}</li>-->
+<!--        {% endfor %}-->
+    </ul>
+{% endblock %}

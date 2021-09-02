@@ -1,0 +1,18 @@
+{% extends 'CallBoard/default.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+{% block content %}
+{{ form.media }}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+<a href="../"><input type="button" value="Back" class="btn btn-primary" /></a>
+{% endblock content %}
+</body>
+</html>

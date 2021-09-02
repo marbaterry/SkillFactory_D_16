@@ -1,0 +1,37 @@
+{% extends 'CallBoard/default.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title><h1>{{ post.postTitle }}</>h1></title>
+<!--    {{ post.postTitle }}-->
+<hr />
+</head>
+
+<body>
+    <h2>{{ post.postTitle }}</h2>
+    {{ post.content }}
+
+    <hr />
+<table class='table'>
+    <tr>
+        <td><span class='font-weight-bold'>Принято</span></td>
+        <td align=center><span class='font-weight-bold text-nowrap'>Отклик</td>
+        <td><span class='font-weight-bold'>Пользователь</td>
+        <td><span class='font-weight-bold'>Дата</td>
+    </tr>
+    {% for i in response %}
+    <tr>
+        <td>{{ i.commentAllow }}</td>
+        <td class='text-center'>{{ i.commentText }}</td>
+        <td class='text-center'>{{ i.commentUser }}</a></td>
+        <td>{{ i.commentDate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <a href="{{ request.path }}new_comment"><input type="button" value="Оставить комментарий" class="btn btn-primary" /></a>
+<a href="../"><input type="button" value="Назад" class="btn btn-primary" /></a>
+{% endblock content %}
+</body>
+</html>

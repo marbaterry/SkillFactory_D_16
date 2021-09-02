@@ -1,0 +1,42 @@
+{% extends 'CallBoard/default.html' %}
+{% block title %} Мои Заявки {% endblock title %}
+
+{% block content %}
+    <h2>Мои заявки</h2>
+
+<table class='table'>
+    <tr>
+        <td><span class='font-weight-bold'>Принято</span></td>
+        <td align=center><span class='font-weight-bold text-nowrap'>Отклик</td>
+        <td><span class='font-weight-bold'>Пользователь</td>
+        <td><span class='font-weight-bold'>Дата</td>
+    </tr>
+    {% for comment in comments %}
+    <tr>
+        <td>{{ comment.commentAllow }}</td>
+        <td class='text-center'>{{ comment.commentText }}</td>
+        <td class='text-center'>{{ comment.commentUser }}</a></td>
+        <td>{{ comment.commentDate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</ul>
+    </ul>
+
+
+<!--<form method="GET">-->
+<!--    {{ filter.form }} &lt;!&ndash; Форму от фильтров за нас сделает django. А вот кнопку, увы придётся делать самому &ndash;&gt;-->
+<!--    <input type="submit" value="Найти">-->
+<!--</form>-->
+
+<!--<table>-->
+<!--    {% for product in filter %} &lt;!&ndash; поменяем products на filter.qs, т. к. теперь мы забираем уже отобранную по каким-то параметрам информацию &ndash;&gt;-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            {{ product.comments }}-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
+
+{% endblock content %}
